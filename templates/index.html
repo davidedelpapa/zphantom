@@ -1,0 +1,59 @@
+{% extends "page.html" %}
+
+{% block page_content %}
+
+<div id="main">
+	<div class="inner">
+		<header>
+			<h1>{{ section.title | safe }}
+				{% if section.extra.subtitle %}
+				<br />{{ section.extra.subtitle | safe }}
+				{% endif %}
+			</h1>
+			{% if section.content %}
+			<p>
+				{{ section.content | safe }}
+			</p>
+			{% endif %}
+		</header>
+		<section class="tiles">
+
+			{% set blogs = get_section(path="blog/_index.md")%}
+
+			{% for page in blogs.pages %}
+
+			{% if page.extra.style %}
+				{% set style = page.extra.style %}
+			{% else %}
+				{% set n = get_random(start=1, end=7) | as_str %}
+				{% set style = "style" ~ n %}
+			{% endif %}
+
+			{% if page.extra.image_path %}
+				{% set abs_image_path = page.extra.image_path | trim | trim_start_matches(pat="/") %}
+				{% set cover_path = "../static/" ~ abs_image_path %}
+			{% else %}
+				{% set cover_path = "../themes/zphantom/static/images/default.jpg" %}
+			{% endif %}
+
+			<article class="{{ style }}">
+				<span class="image">
+					<img src="{{ resize_image(path=cover_path, width=150, height=150, op="fill") }}" alt="" />
+				</span>
+				<a href="{{ page.permalink | safe }}">
+					<h2>{{ page.title }}</h2>
+					<div class="content">
+						{% if page.extra.summary %}
+						<p>{{ page.extra.summary | safe }}</p>
+						{% endif %}
+					</div>
+				</a>
+			</article>
+
+			{% endfor %}
+
+		</section>
+	</div>
+</div>
+
+{% endblock page_content %}

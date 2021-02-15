@@ -1,0 +1,18 @@
+<footer id="footer">
+    <div class="inner">
+        {% if config.extra.zphantom_data_path !="" %}
+            {% set socials = load_data(path=config.extra.zphantom_data_path) %}
+            <section>
+                <h2>Get in touch</h2>
+                <ul class="icons">
+                    {% for social in socials.socials %}
+                    <li><a href="{{social.link}}" class="icon {{socials.style}} {{social.icon}}"><span class="label">{{social.caption}}</span></a></li>
+                    {% endfor %}
+                </ul>
+            </section>
+        {% endif %}
+        <ul class="copyright">
+            <li>&copy; {{ config.extra.zphantom_site_owner | safe }}. All rights reserved</li><li>Design: <a href="https://dev.to/davidedelpapa">Davide Del Papa</a> & <a href="http://html5up.net">HTML5 UP</a></li>
+        </ul>
+    </div>
+</footer>

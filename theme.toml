@@ -1,0 +1,26 @@
+name = "zPhantom"
+description = "A blog theme based on pphantom by html5up"
+license = "CCA 3.0 license"
+homepage = "https://github.com/davidedelpapa/zphantom"
+# The minimum version of Zola required
+min_version = "0.4.0"
+# An optional live demo URL
+demo = "https://zphantom.netlify.app/"
+
+# The theme author info: you!
+[author]
+name = "Davide Del Papa"
+homepage = "https://github.com/davidedelpapa/"
+
+# If this is porting a theme from another static site engine, provide
+# the info of the original author here
+[original]
+author =  "@ajlkn"
+homepage = "http://html5up.net/"
+repo = "https://html5up.net/phantom"
+
+# Any variable present here can be overriden in the end user `config.toml`
+[extra]
+zphantom_site_name = "zPhantom"
+zphantom_site_owner = "Untitled"
+zphantom_data_path = ""

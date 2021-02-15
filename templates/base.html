@@ -1,0 +1,54 @@
+<!DOCTYPE HTML>
+<!--
+	Phantom by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>{% block title %}{% endblock title %}</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="/assets/css/main.css" />
+		<noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+	</head>
+	<body class="is-preload">
+		<!-- Wrapper -->
+			<div id="wrapper">
+
+				<!-- Header -->
+				{% include "header.html" %}
+
+				{% block menu %}
+				<!-- Menu -->
+				<nav id="menu">
+					<h2>Menu</h2>
+					<ul>
+						<li><a href="/">Home</a></li>
+						{% set blog_url = get_url(path="@/blog/_index.md") %}
+						<li><a href="{{ blog_url }}">Blog</a></li>
+						{% set section = get_section(path="_index.md") %}
+						{% for page in section.pages %}
+						<li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+						{% endfor %}
+					</ul>
+				</nav>
+				{% endblock menu %}
+				<!-- Main -->
+				{% block page_content %}
+				{% endblock page_content %}
+
+				<!-- Footer -->
+				{% include "footer.html" %}
+
+			</div>
+
+		<!-- Scripts -->
+			<script src="/assets/js/jquery.min.js"></script>
+			<script src="/assets/js/browser.min.js"></script>
+			<script src="/assets/js/breakpoints.min.js"></script>
+			<script src="/assets/js/util.js"></script>
+			<script src="/assets/js/main.js"></script>
+
+	</body>
+</html>
