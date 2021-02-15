@@ -201,3 +201,9 @@ In this scenario, a possible *socilas.json* can be:
 ```
 
 The `id` field is not mandatory.
+
+## LICENSE
+
+[CC-BY-3.0](https://creativecommons.org/licenses/by/3.0/)
+
+[Phantom](https://html5up.net/phantom) follows this [same license](https://html5up.net/license).
