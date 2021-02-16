@@ -4,13 +4,15 @@ A blogging theme based on [Phantom](https://html5up.net/phantom) by [HTML5Up](ht
 
 Live at [zphantom.netlify.app/](https://zphantom.netlify.app/)
 
+[[screenshot.md]]
+
 ## How to Use It
 
-Create a new Zola project, then move into the *theme/* folder
+Create a new Zola project (answer all the questions), then move into the *theme/* folder
 
 ```bash
 zola init cool-zola-project
-cd cool-zola-project/theme
+cd cool-zola-project/themes
 ```
 
 Now you need to clone this repository
@@ -19,6 +21,14 @@ Now you need to clone this repository
 git clone https://github.com/davidedelpapa/zphantom.git
 cd ..
 ```
+
+Now you have to set the following in the *config.toml*, **before** the `[markdown]` and the `[extra]` section:
+
+```ini
+theme = "zphantom"
+```
+
+And the theme is operative.
 
 ### Main structure
 
@@ -98,7 +108,7 @@ title = "First Article"
 date = 2021-02-15
 template = "page.html"
 [extra]
-image_path = " images/pic13.jpg "
+image_path = " images/pic.jpg "
 summary = "Donec eget ex magna. Interdum et malesuada fames ..."
 +++
 Donec eget ex magna. Interdum et malesuada fames ac ante ipsum primis in faucibus. Pellentesque venenatis dolor imperdiet dolor mattis sagittis. Praesent rutrum sem diam, vitae egestas enim auctor sit amet.
@@ -131,7 +141,11 @@ zphantom_data_path = "content/socials.json"
 
 And creating a *socilas.json* with a list of all socials.
 
-In this scenario, a possible *socilas.json* can be:
+```bash
+touch ./content/socials.json
+```
+
+A possible *socilas.json* can be:
 
 ```json
 {
@@ -201,6 +215,16 @@ In this scenario, a possible *socilas.json* can be:
 ```
 
 The `id` field is not mandatory.
+
+### Run
+
+A quick test with:
+
+```bash
+zola serve
+```
+
+and it should work as expected
 
 ## LICENSE
 
