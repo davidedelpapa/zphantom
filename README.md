@@ -4,7 +4,7 @@ A blogging theme based on [Phantom](https://html5up.net/phantom) by [HTML5Up](ht
 
 Live at [zphantom.netlify.app/](https://zphantom.netlify.app/)
 
-[[screenshot.md]]
+[[./screenshot.png]]
 
 ## How to Use It
 
